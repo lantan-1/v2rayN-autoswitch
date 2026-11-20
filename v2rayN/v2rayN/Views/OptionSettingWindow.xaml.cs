@@ -57,6 +57,7 @@ public partial class OptionSettingWindow
         cmbRootCertificateProvider.ItemsSource = Global.RootCertProviders;
 
         cmbMainGirdOrientation.ItemsSource = Utils.GetEnumNames<EGirdOrientation>();
+        cmbAutoSwitchStrategy.ItemsSource = new[] { ResUI.AutoSwitchStrategyOff, ResUI.AutoSwitchStrategyFailoverOnly, ResUI.AutoSwitchStrategySameRegion, ResUI.AutoSwitchStrategyGlobal };
 
         _ = InitSettingFont();
 
@@ -109,7 +110,7 @@ public partial class OptionSettingWindow
             this.Bind(ViewModel, vm => vm.SpeedPingTestUrl, v => v.cmbSpeedPingTestUrl.Text).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.UdpTestTarget, v => v.cmbUdpTestTarget.Text).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.MixedConcurrencyCount, v => v.cmbMixedConcurrencyCount.Text).DisposeWith(disposables);
-            this.Bind(ViewModel, vm => vm.EnableAutoSwitch, v => v.togEnableAutoSwitch.IsChecked).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.AutoSwitchStrategy, v => v.cmbAutoSwitchStrategy.SelectedIndex).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.AutoSwitchInterval, v => v.txtAutoSwitchInterval.Text).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.EnableHWA, v => v.togEnableHWA.IsChecked).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.SubConvertUrl, v => v.cmbSubConvertUrl.Text).DisposeWith(disposables);

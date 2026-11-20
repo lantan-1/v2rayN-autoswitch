@@ -1903,4 +1903,16 @@
   <data name="TbSortingProcess" xml:space="preserve">
     <value>行程</value>
   </data>
+  <data name="AutoSwitchStrategyOff" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="AutoSwitchStrategyFailoverOnly" xml:space="preserve">
+    <value>僅故障時切換</value>
+  </data>
+  <data name="AutoSwitchStrategySameRegion" xml:space="preserve">
+    <value>同地區最快</value>
+  </data>
+  <data name="AutoSwitchStrategyGlobal" xml:space="preserve">
+    <value>全局最快</value>
+  </data>
 </root>

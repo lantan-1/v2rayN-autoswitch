@@ -15,6 +15,31 @@
 
 ---
 
+## AutoSwitch 自动切换（本仓库新增功能）
+
+Adds periodic real-delay testing with automatic switching to the fastest server (4 strategies, localized UI).
+
+在官方 7.25.6 基础上新增的节点自动切换功能：按设定的间隔自动对全部节点做真连接延迟测速，再按策略切换到更快的节点。订阅里的流量、到期、官网等信息类节点只测速，不会被选为切换目标。
+
+设置位置：设置 → 参数设置 →「v2rayN 设置」页签。
+
+![自动切换设置](docs/autoswitch-settings.png)
+
+「自动切换策略」四档：
+
+- **关闭**：不自动切换
+- **仅故障时切换**：当前节点连不通（延迟测不出，或 ≥1000ms）时，才切到全池最快的节点
+- **同地区最快**：优先在与当前节点同地区的节点里选最快的；同地区没有可用节点时才跨地区兜底
+- **全局最快**：在全部节点里选最快的
+
+切换带迟滞：候选节点要明显更快（延迟不超过当前的 85%，且至少快 80ms）才会切换，避免来回跳；切换后至少驻留 10 分钟。
+
+![自动切换策略下拉](docs/autoswitch-dropdown.png)
+
+「自动测速切换间隔（分钟）」：多久测一轮，默认 10，最小 3。界面文字跟随软件语言切换（简体中文、繁体中文、English 等）。
+
+---
+
 ## Download / 下载
 
 Download the latest release here:
